@@ -141,9 +141,7 @@ function createUserSpatialIndex(users){
 }
 
 //ok now testing the function 
-const my_users= createUserSpatialIndex(users);
 
-console.log(my_users);
 
 
 
