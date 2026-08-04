@@ -158,10 +158,22 @@ function createUserSpatialIndex(usersOrRequests){
 
 }
 
-//ok now testing the function 
-const sample_test= createUserSpatialIndex(usersOrRequests);
-console.log(sample_test); 
+//ok now let me actually export this this we export the twon function which will then be used 
 
+
+module.exports = { 
+
+    // as long as they have the same kname you can use only one name 
+
+     userLocToCell,
+    createUserSpatialIndex
+
+
+
+
+
+
+}
 
 
 
