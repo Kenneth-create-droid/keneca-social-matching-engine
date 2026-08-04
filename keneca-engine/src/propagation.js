@@ -39,6 +39,13 @@ const test = cellsAtCurrentRing(
     "892b986616bffff",
     1
 );
+//let's export the modules
+module.export = {
+    cellsAtCurrentRing
+
+};
+
+
 
 
 

@@ -166,7 +166,12 @@ module.exports = {
     // as long as they have the same kname you can use only one name 
 
      userLocToCell,
-    createUserSpatialIndex
+    createUserSpatialIndex, 
+    usersOrRequests
+
+   
+
+
 
 
 
