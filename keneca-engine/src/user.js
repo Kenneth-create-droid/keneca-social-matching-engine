@@ -7,15 +7,17 @@ const h3_lib = require ("h3-js");
 // this is a sample of the user's information 
 
 
-// first of all we create the array
+// first of all we create the array. This array will also consist of users or the rquest as requests will also have lat and long
 
-const users= [
+const usersOrRequests= [
 { 
     id: 1,
     name: "Liam",
     latitude: 43.945,
     longitude: -78.896
 }, 
+
+ 
 
 {
     id: 2,
@@ -43,6 +45,22 @@ const users= [
         name: "Kenneth",
         latitude: 43.800,
         longitude: -79.200
+    },
+
+    {
+        id: 6,
+        name: "kennata",
+        request: "Has anyone seen my phone",
+        latitude: 43.9550,
+        longitude: -78.9100
+    },
+
+    {
+        id: 7,
+        name: "Jason",
+        request: " Anyone has any extra member for the basketball",
+        latitude: 43.9490,
+        longitude: -78.9000
     }
 
  ];
@@ -78,7 +96,7 @@ const sample_conversion = userLocToCell(43.945, -78.896);
 
 // this function create a dictioary of cells with each cell containg a list of users in that cell.  this function convert's a list of users into their corresponding spatial cells
 
-function createUserSpatialIndex(users){
+function createUserSpatialIndex(usersOrRequests){
 
     //ok first I think we create an empty dictionary 
 
@@ -86,11 +104,11 @@ function createUserSpatialIndex(users){
 
     //then we loop throught each of the array of users 
 
-    for (let i=0; i<users.length; i++){
+    for (let i=0; i<usersOrRequests.length; i++){
 
         // we need to access one user indiviually and store them in the function user 
 
-        const user = users[i];
+        const user = usersOrRequests[i];
 
         //apply the function of converting to the h3 cell indivudally 
 
@@ -141,7 +159,8 @@ function createUserSpatialIndex(users){
 }
 
 //ok now testing the function 
-
+const sample_test= createUserSpatialIndex(usersOrRequests);
+console.log(sample_test); 
 
 
 
