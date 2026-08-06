@@ -19,7 +19,7 @@ const { getSpatialIndex } = require("./spatialIndex");
 // This function is responsible for finding possible users for a post
 // It searches users only in the cells belonging to the current propagation ring
 // It then calculates their distance from the post
-function findUsersForPost(startingCell, current_Ring, post){
+function findUsersForPostWithDistance(startingCell, current_Ring, post){
 
 
     // First, we find all H3 cells that belong to this propagation ring
@@ -56,6 +56,8 @@ function findUsersForPost(startingCell, current_Ring, post){
 
 
     // Loop through every H3 cell returned from the propagation function
+
+    // this loop was used when we only focus on the actual cells that's all 
 
     for (const cell of cells){
 
@@ -137,5 +139,6 @@ function findUsersForPost(startingCell, current_Ring, post){
 // can use it
 
 module.exports = {
-    findUsersForPost
+    findUsersForPostWithDistance
 };
+
